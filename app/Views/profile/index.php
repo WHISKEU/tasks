@@ -8,7 +8,7 @@
 
     <div class="container">
 
-        <h1>Demo User Profile</h1>
+        <h1>User Profile</h1>
 
         <nav>
             <a href="<?= base_url('/') ?>">Welcome</a>
