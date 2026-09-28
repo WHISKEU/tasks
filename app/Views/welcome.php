@@ -2,35 +2,40 @@
 <html>
 <head>
     <title>Tasks for Today</title>
+    <link rel="stylesheet" href="<?= base_url('css/style.css') ?>">
 </head>
 <body>
 
-    <h1>Tasks for Today</h1>
+    <div class="container">
 
-    <nav>
-        <a href="/">Welcome</a> |
-        <a href="/tasks">All Tasks</a> |
-        <a href="/profile">Profile</a> |
-        <a href="/about">About</a>
-    </nav>
+        <h1>Tasks for Today</h1>
 
-    <hr>
+        <nav>
+            <a href="<?= base_url('/') ?>">Welcome</a>
+            <a href="<?= base_url('tasks') ?>">All Tasks</a>
+            <a href="<?= base_url('profile') ?>">Profile</a>
+            <a href="<?= base_url('about') ?>">About</a>
+        </nav>
 
-    <h2>Today’s Tasks</h2>
+        <h2>Today’s Tasks</h2>
 
-    <?php if (!empty($tasks)): ?>
-        <ul>
-            <?php foreach ($tasks as $task): ?>
-                <li>
-                    <?= esc($task['title']) ?>
-                    -
-                    <?= esc($task['status']) ?>
-                </li>
-            <?php endforeach; ?>
-        </ul>
-    <?php else: ?>
-        <p>No tasks scheduled for today.</p>
-    <?php endif; ?>
+        <?php if (!empty($tasks)): ?>
+            <ul class="task-list">
+                <?php foreach ($tasks as $task): ?>
+                    <li>
+                        <?= esc($task['title']) ?>
+                        -
+                        <span class="status">
+                            <?= esc($task['status']) ?>
+                        </span>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        <?php else: ?>
+            <p>No tasks scheduled for today.</p>
+        <?php endif; ?>
+
+    </div>
 
 </body>
 </html>
