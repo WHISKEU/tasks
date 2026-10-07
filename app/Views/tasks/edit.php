@@ -16,6 +16,13 @@
             <a href="<?= base_url('profile') ?>">Profile</a>
             <a href="<?= base_url('about') ?>">About</a>
             <a href="<?= base_url('logout') ?>">Logout</a>
+
+        <?php if (session()->get('isLoggedIn')): ?>
+            <a href="<?= base_url('logout') ?>">Logout</a>
+        <?php else: ?>
+            <a href="<?= base_url('login') ?>">Login</a>
+        <?php endif; ?>
+
         </nav>
 
         <?php $errors = session()->getFlashdata('errors') ?? []; ?>

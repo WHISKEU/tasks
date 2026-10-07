@@ -15,6 +15,13 @@
             <a href="<?= base_url('tasks') ?>">All Tasks</a>
             <a href="<?= base_url('profile') ?>">Profile</a>
             <a href="<?= base_url('about') ?>">About</a>
+
+        <?php if (session()->get('isLoggedIn')): ?>
+            <a href="<?= base_url('logout') ?>">Logout</a>
+        <?php else: ?>
+            <a href="<?= base_url('login') ?>">Login</a>
+        <?php endif; ?>
+
         </nav>
 
         <h2>Today’s Tasks</h2>
