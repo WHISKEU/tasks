@@ -8,7 +8,7 @@ class TaskModel extends Model
     protected $table = 'tasks';
     protected $primaryKey = 'id';
 
-    protected $allowedFields = ['title', 'status', 'task_date', 'created_at'];
+    protected $allowedFields = ['title', 'status', 'task_date', 'created_at','is_archived'];
 
     protected $returnType = 'array';
 }

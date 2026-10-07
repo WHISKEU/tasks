@@ -82,3 +82,95 @@ td {
 tr:hover {
     background-color: #fdf2f8;
 }
+
+label {
+    color: #7e22ce;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    max-width: 450px;
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid #e9a8ce;
+    border-radius: 6px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #9333ea;
+    box-shadow: 0 0 5px rgba(147, 51, 234, 0.3);
+}
+
+button {
+    background-color: #9333ea;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #7e22ce;
+}
+
+td a {
+    display: inline-block;
+    background-color: #ec4899;
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+td a:hover {
+    background-color: #be185d;
+}
+
+td form {
+    display: inline;
+}
+
+td form button {
+    background-color: #be185d;
+    padding: 8px 12px;
+}
+
+td form button:hover {
+    background-color: #9d174d;
+}
+
+.container p {
+    line-height: 1.6;
+}
+
+.container strong {
+    color: #9d174d;
+}
+
+.new-task-button {
+    display: inline-block;
+    background-color: #ec4899;
+    color: white;
+    text-decoration: none;
+    padding: 11px 18px;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+.new-task-button:hover {
+    background-color: #be185d;
+}
+
+.new-task-container {
+    text-align: right;
+    margin: 20px 0;
+}

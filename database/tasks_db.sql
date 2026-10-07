@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 28, 2026 at 01:15 PM
+-- Generation Time: Oct 07, 2026 at 03:25 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -32,22 +32,25 @@ CREATE TABLE `tasks` (
   `title` varchar(150) NOT NULL,
   `status` varchar(20) NOT NULL DEFAULT 'pending',
   `task_date` date NOT NULL,
-  `created_at` datetime NOT NULL
+  `created_at` datetime NOT NULL,
+  `is_archived` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tasks`
 --
 
-INSERT INTO `tasks` (`id`, `title`, `status`, `task_date`, `created_at`) VALUES
-(1, 'Buy groceries', 'completed', '2026-09-27', '2026-09-27 08:00:00'),
-(2, 'Clean the room', 'completed', '2026-09-28', '2026-09-28 08:00:00'),
-(3, 'Do homework', 'pending', '2026-09-28', '2026-09-28 09:00:00'),
-(4, 'Read a book', 'pending', '2026-09-28', '2026-09-28 10:00:00'),
-(5, 'Wash the dishes', 'pending', '2026-09-28', '2026-09-28 11:00:00'),
-(6, 'Exercise', 'pending', '2026-09-29', '2026-09-29 08:00:00'),
-(7, 'Visit a friend', 'pending', '2026-09-29', '2026-09-29 09:00:00'),
-(8, 'Play tennis, weh', 'pending', '2026-09-30', '2026-09-30 10:00:00');
+INSERT INTO `tasks` (`id`, `title`, `status`, `task_date`, `created_at`, `is_archived`) VALUES
+(1, 'Buy groceries for next week', 'completed', '2026-09-27', '2026-09-27 08:00:00', 0),
+(2, 'Clean the room', 'completed', '2026-09-28', '2026-09-28 08:00:00', 0),
+(3, 'Do homework', 'pending', '2026-09-28', '2026-09-28 09:00:00', 0),
+(4, 'Read a book', 'pending', '2026-09-28', '2026-09-28 10:00:00', 1),
+(5, 'Wash the dishes', 'pending', '2026-09-28', '2026-09-28 11:00:00', 0),
+(6, 'Exercise', 'pending', '2026-09-29', '2026-09-29 08:00:00', 0),
+(7, 'Visit a friend', 'completed', '2026-09-29', '2026-09-29 09:00:00', 0),
+(8, 'Play tennis, weh', 'pending', '2026-09-30', '2026-09-30 10:00:00', 0),
+(9, 'Do the Midterm Project', 'pending', '2026-10-10', '0000-00-00 00:00:00', 0),
+(10, 'Do task', 'pending', '2026-10-07', '2026-10-07 13:18:32', 0);
 
 -- --------------------------------------------------------
 
@@ -58,6 +61,7 @@ INSERT INTO `tasks` (`id`, `title`, `status`, `task_date`, `created_at`) VALUES
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `full_name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `created_at` datetime NOT NULL
@@ -67,8 +71,8 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `full_name`, `email`, `created_at`) VALUES
-(1, 'demo', 'Juan Dela Cruz', 'jdc@google.com', '2026-09-28 08:00:00');
+INSERT INTO `users` (`id`, `username`, `password`, `full_name`, `email`, `created_at`) VALUES
+(1, 'demo', '$2y$10$XtENUd9Z4vuhBIftHG0c3.CP84pekKbykMEj28jUQChd3MLrLMgXe', 'Juan Dela Cruz', 'jdc@google.com', '2026-09-28 08:00:00');
 
 --
 -- Indexes for dumped tables
@@ -95,7 +99,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `tasks`
 --
 ALTER TABLE `tasks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `users`
